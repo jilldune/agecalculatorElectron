@@ -1,0 +1,38 @@
+{
+  "name": "agecalculator",
+  "productName": "agecalculator",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "buid-installer": "electron-builder"
+  },
+  "keywords": [
+    "age",
+    "calculator",
+    "year"
+  ],
+  "author": {
+    "name": "Mensah Benjamin",
+    "email": "54783380+jilldune@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-builder": "^24.6.3",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.4.1",
+    "@electron-forge/maker-deb": "^6.4.1",
+    "@electron-forge/maker-rpm": "^6.4.1",
+    "@electron-forge/maker-squirrel": "^6.4.1",
+    "@electron-forge/maker-zip": "^6.4.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.1",
+    "electron": "26.1.0"
+  }
+}

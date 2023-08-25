@@ -1,0 +1,171 @@
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-family: Geneva, Tahoma, sans-serif;
+}
+
+:root {
+    --bg-main: #1e1e1e;
+    --bg-sub: #f6f5f5;
+    --text-d: #373535;
+    --text-w: #fff;
+    --text-b: #1956a7;
+    --btn-bg: #3b9baa31;
+    --btn-hover-bg: #3b9baaaf;
+    --btn-boder-bg: #3b9baa;
+    --btn-reset-bg: #c2383858;
+    --btn-reset-hover-bg: #ff0000af;
+    --btn-reset-boder-bg: #c23838;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-main);
+    background-image: url('../../public/assets/image/age.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    overflow: hidden;
+}
+
+.container-wrapper {
+    width: 250px;
+    padding: .3em;
+    border-radius: .8em;
+    background-color: rgba($color: #ffffff, $alpha: .2);
+    border: 2px solid rgba($color: #ffffff, $alpha: 0.18);
+    backdrop-filter: blur(15px);
+    
+    .container {
+        // width: 100%;
+        padding: .4em;
+        
+        .header {
+            font-family: 0.95rem;
+            font-weight: 900;
+            text-align: center;
+            text-transform: capitalize;
+            font-family: sans-serif;
+            color: var(--text-w);
+            padding: .2em;
+            margin-bottom: .5em;
+            user-select: none;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 5px;
+            padding: .2em;
+            border-radius: .5em;
+            margin-bottom: .5em;
+            
+            .input-container {
+                width: 100%;
+                
+                label {
+                    display: block;
+                    margin-bottom: .3em;
+                    font-size: .7rem;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                    color: var(--text-w);
+                    user-select: none;
+                }
+                input {
+                    width: 62px;
+                    height: 20px;
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    color: var(--text-b);
+                    padding: .2em .4em;
+                    border-radius: .45em;
+                    background-color: rgba($color: #ffffff, $alpha: .2);
+                    border: 1px solid rgba($color: #ffffff, $alpha: 0.18);
+                    
+                    
+                    &::placeholder {
+                        font-size: 0.75rem;
+                        color: var(--text-w);
+                    }
+                    &:hover,
+                    &:focus {
+                        border-color: var(--btn-bg);
+                    }
+                }
+            }
+        }
+
+        // the age output container
+        .output {
+            min-height: 35px;
+            padding: .5em;
+            margin: .8em 0;
+            background-color: rgba($color: #ffffff, $alpha: .2);
+            border: 1px solid rgba($color: #ffffff, $alpha: 0.18);
+            border-radius: .45em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-align: center;
+            color: var(--text-w);
+            user-select: none;
+
+            span{
+                &.valid {
+                    color: #305028;
+                    letter-spacing: .02rem;
+                }
+                &.error {
+                    color: #ba3a0c;
+                    letter-spacing: .05rem;
+                }
+            }
+        }
+
+        // button
+        .btn-container {   
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: .5em 0;         
+            button {
+                width: 100%;
+                padding: .6em;
+                font-size: 0.75rem;
+                text-transform: capitalize;
+                color: var(--text-w);
+                border-radius: .45em;
+                margin-top: .5em;
+                border: 1px solid var(--btn-boder-bg);
+                background-color: var(--btn-bg);
+                cursor: pointer;
+
+                &#resetButton {
+                    border: 1px solid var(--btn-reset-boder-bg);
+                    background-color: var(--btn-reset-bg);
+                    
+                    &:hover {
+                        background-color: var(--btn-reset-hover-bg);
+                    }
+                }
+                
+                &:hover {
+                    background-color: var(--btn-hover-bg);
+                }
+
+                &:not(:last-of-type) {
+                    margin-right: .5em;
+                }
+            }
+        }
+    }
+}

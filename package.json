@@ -1,9 +1,9 @@
 {
   "name": "agecalculator",
-  "productName": "agecalculator",
+  "productName": "Age Calculator",
   "version": "1.0.0",
-  "description": "My Electron application description",
-  "main": "src/index.js",
+  "description": "A application to calculate age on the go with little or no effort",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",

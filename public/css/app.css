@@ -8,7 +8,7 @@
 
 :root {
   --bg-main: #1e1e1e;
-  --bg-sub: #f6f5f5;
+  --bg-sub: #d5d5d5;
   --text-d: #373535;
   --text-w: #fff;
   --text-b: #1956a7;
@@ -31,21 +31,37 @@ body {
 }
 body::before {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 10%;
   content: "";
   display: block;
   width: 120px;
   height: 120px;
-  background-color: var(--btn-bg);
+  -webkit-transform: translate(-10%, -70%);
+          transform: translate(-10%, -70%);
+  border-radius: 50%;
+  background-color: rgba(219, 177, 63, 0.18);
+}
+body::after {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  -webkit-transform: translate(10%, -30%);
+          transform: translate(10%, -30%);
+  border-radius: 50%;
+  background-color: rgba(219, 177, 63, 0.18);
 }
 
 .container-wrapper {
   width: 250px;
   padding: 0.3em;
-  border-radius: 0.8em;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.5em;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
 }
@@ -96,7 +112,7 @@ body::before {
   height: 20px;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--text-b);
+  color: var(--text-w);
   padding: 0.2em 0.4em;
   border-radius: 0.45em;
   background-color: rgba(255, 255, 255, 0.2);

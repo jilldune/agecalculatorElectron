@@ -8,7 +8,7 @@
 
 :root {
     --bg-main: #1e1e1e;
-    --bg-sub: #f6f5f5;
+    --bg-sub: #d5d5d5;
     --text-d: #373535;
     --text-w: #fff;
     --text-b: #1956a7;
@@ -27,35 +27,43 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: var(--bg-main);
-    // background-image: url('../../public/assets/image/age.jpg');
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background-attachment: fixed;
-    // background-position: center;
     overflow: hidden;
 
     &::before {
         position: absolute;
-        top: 50%;
+        top: 70%;
         left: 10%;
         content: '';
         display: block;
         width: 120px;
         height: 120px;
-        background-color: var(--btn-bg);
+        transform: translate(-10%,-70%);
+        border-radius: 50%;
+        background-color: rgba($color: #dbb13f, $alpha: 0.18);
+    }
+    &::after {
+        position: absolute;
+        top: 30%;
+        right: 10%;
+        content: '';
+        display: block;
+        width: 120px;
+        height: 120px;
+        transform: translate(10%,-30%);
+        border-radius: 50%;
+        background-color: rgba($color: #dbb13f, $alpha: 0.18);
     }
 }
 
 .container-wrapper {
     width: 250px;
     padding: .3em;
-    border-radius: .8em;
-    background-color: rgba($color: #ffffff, $alpha: .2);
-    border: 2px solid rgba($color: #ffffff, $alpha: 0.18);
+    border-radius: .5em;
+    background-color: rgba($color: #ffffff, $alpha: .15);
+    border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
     backdrop-filter: blur(15px);
     
     .container {
-        // width: 100%;
         padding: .4em;
         
         .header {
@@ -95,7 +103,7 @@ body {
                     height: 20px;
                     font-size: 0.75rem;
                     font-weight: 600;
-                    color: var(--text-b);
+                    color: var(--text-w);
                     padding: .2em .4em;
                     border-radius: .45em;
                     background-color: rgba($color: #ffffff, $alpha: .2);
@@ -144,7 +152,7 @@ body {
         }
 
         // button
-        .btn-container {   
+        .btn-container {
             display: flex;
             justify-content: center;
             align-items: center;

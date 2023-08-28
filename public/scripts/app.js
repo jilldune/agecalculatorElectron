@@ -24,8 +24,7 @@ function init() {
         return status;
     }
     function limiter(target,length){
-        let status = true;
-        let value = target.value;
+        let status = true, value = target.value;
         if(typeof value === "string" && !isNaN(length)) {
             target.value = value.length <= length? value : value.slice(1,value.length);
             return !status;
@@ -35,16 +34,10 @@ function init() {
 
     // validator
     const validator = {
-        day: function (target) {
+        dayMonth: function (target) {
             let value = target.value;
             if(checkNumber(target)) {
                 limiter(target,2);
-            }
-        },
-        month: function (target) {
-            let value = target.value;
-            if(checkNumber(target)) {
-                limiter(target,2);                
             }
         },
         year: function (target) {
@@ -59,8 +52,8 @@ function init() {
     function validateInput(target,type) { validator[type](target); }
 
     // add listeners / Validators to all the date inputs
-    addListener(day,'input',({target})=>{ validateInput(target,'day'); })
-    addListener(month,'input',({target})=>{ validateInput(target,'month'); })
+    addListener(day,'input',({target})=>{ validateInput(target,'dayMonth'); })
+    addListener(month,'input',({target})=>{ validateInput(target,'dayMonth'); })
     addListener(year,'input',({target})=>{ validateInput(target,'year'); })
 
     // calculate the age

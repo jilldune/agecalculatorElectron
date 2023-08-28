@@ -21,17 +21,29 @@
 }
 
 body {
+    position: relative;
     display: grid;
     place-items: center;
     width: 100vw;
     height: 100vh;
     background-color: var(--bg-main);
-    background-image: url('../../public/assets/image/age.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    // background-image: url('../../public/assets/image/age.jpg');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-attachment: fixed;
+    // background-position: center;
     overflow: hidden;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        content: '';
+        display: block;
+        width: 120px;
+        height: 120px;
+        background-color: var(--btn-bg);
+    }
 }
 
 .container-wrapper {

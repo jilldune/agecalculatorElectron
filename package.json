@@ -10,7 +10,25 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
-    "buid-installer": "electron-builder"
+    "build-installer": "electron-builder"
+  },
+  "build": {
+    "appId": "com.agecalculator",
+    "win": {
+      "target": ["nsis"],
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "installerIcon": "./public/assets/favicon/favicon.ico",
+      "uninstallerIcon": "./public/assets/favicon/favicon.ico",
+      "uninstallDisplayName": "Age Calculator",
+      "license": "./src/t_c/license.txt",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true,
+      "createStartMenuShortcut": true,
+      "createDesktopShortcut": true
+    }
   },
   "keywords": [
     "age",
@@ -23,7 +41,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "electron-builder": "^24.6.3",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
@@ -33,6 +50,7 @@
     "@electron-forge/maker-squirrel": "^6.4.1",
     "@electron-forge/maker-zip": "^6.4.1",
     "@electron-forge/plugin-auto-unpack-natives": "^6.4.1",
+    "electron-builder": "^24.6.3",
     "electron": "26.1.0"
   }
 }
